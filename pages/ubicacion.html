@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="stylesheet" href="../style/style.css">
+    <title>Chiringuito Marroquí</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <div class="container-fluid">
+              <div class="navbar-brand title">
+                <h1>Chinguirito <br> Marroquí </h1>
+              </div>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-iconc "></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav ms-auto navbar-title ">
+                  <li class="nav-item"><a href="../index.html" class="nav-link naviitem-title">Restaurante</a></li>
+                  <li><a href="reservar.html" class="nav-link naviitem-title">Reservar</a></li>
+                  <li><a href="menu.html" class="nav-link naviitem-title">Menú</a></li>
+                  <li><a href="ubicacion.html" class="nav-link naviitem-title" naviitem-title>Ubicación</a></li>
+                  <li><a href="blog.html" class="nav-link naviitem-title">BLOG</a></li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+    </header>
+    <main>
+        <section>
+            <div class="carousel">
+                <input type="radio" name="slides" id="slide1" checked>
+                <input type="radio" name="slides" id="slide2">
+                <input type="radio" name="slides" id="slide3">
+
+                <div class="slides">
+                    <img src="../img/carrusel/ubicacion/terraza.jpg" alt="Terraza">
+                    <img src="../img/carrusel/ubicacion/restauranteInterno.jpg" alt="Por dentro">
+                    <img src="../img/carrusel/ubicacion/zonaniños.jpg" alt="Zona de niños">
+                </div>
+
+                <label for="slide1" class="prev">&#10094;</label>
+                <label for="slide2" class="next">&#10095;</label>
+            </div>
+        </section>
+        <div class="div-form-location">
+            <div class="div-form-locationdiv">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d59726.28232276495!2d-103.37659759846974!3d20.67394616245247!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428b18cb52fd39b%3A0xd63d9302bf865750!2sGuadalajara%2C%20Jal.!5e0!3m2!1ses-419!2smx!4v1742875328114!5m2!1ses-419!2smx"
+                    width="400" height="250" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="div-form-locationdiv">
+                <label>Dirección</label><br>
+                <b>Calle Juarez 23,Guadalajara,Jalisco México</b><br>
+                <label>E-mail<label><br>
+                <b>chiringuitomarroqui@gmail.com</b><br>
+                <label>Teléfono<label><br>
+                <b>3333333333</b><br><br>
+                <label>Contamos con:</label><br>
+                <b>Estacionamiento</b><br>
+                <b>Zona para niños</b><br>
+                <b>Terraza</b>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div>
+            <a href="../doc/avisoprivacidad.pdf">Aviso de privacidad</a> |
+            <a href="https://www.cfdi.com.mx/login/">Facturación</a> |
+            <a href="https://www.linkedin.com/">Bolsa de trabajo</a> |
+            <a href="../doc/promociones.pdf">Promociones</a>
+        </div>
+        <p>© 2025 Chiringuito Marroquí. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+
+</body>
+</html>

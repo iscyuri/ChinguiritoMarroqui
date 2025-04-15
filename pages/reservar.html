@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="stylesheet" href="../style/style.css">
+    <title>Chiringuito Marroquí</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <div class="container-fluid">
+              <div class="navbar-brand title">
+                <h1>Chinguirito <br> Marroquí </h1>
+              </div>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-iconc "></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav ms-auto navbar-title ">
+                  <li class="nav-item"><a href="../index.html" class="nav-link naviitem-title">Restaurante</a></li>
+                  <li><a href="reservar.html" class="nav-link naviitem-title">Reservar</a></li>
+                  <li><a href="menu.html" class="nav-link naviitem-title">Menú</a></li>
+                  <li><a href="ubicacion.html" class="nav-link naviitem-title" naviitem-title>Ubicación</a></li>
+                  <li><a href="blog.html" class="nav-link naviitem-title">BLOG</a></li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+    </header>
+    <main>
+        <section>
+            <div class="div-form-reservation div-form-comun">
+                <div class="div-info-contacto">
+                    <h4>Te esperamos</h4>
+                    <label>Horario</label><br>
+                    <b>De Martes a Domingo, de <br>11:00 a.m. a 23:00p.m.</b><br><br>
+                    <a href="ubicacion.html">Ubicación</a><br>
+                    <label>Para ver disponibilidad favor <br>de consultar los siguientes datos:</label><br><br>
+                    <label>E-mail</label><br>
+                    <b>chiringuitomarroqui@gmail.com</b><br><br>
+                    <label>Teléfono</label><br>
+                    <b>3333333333</b>
+                </div>
+                <div class="div-info-cliente">
+                    <h4>Favor de ingresar los siguientes <br>datos</h4>
+                    <input type="date" id="fecha" name="fecha" class="form-reservation-input"><br><br>
+                    <select id="opciones" name="opciones">
+                        <option value="-">Número de comensales</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select><br><br>
+                    <input type="text" id="nombre" name="nombre" value="Escribe tu nombre"
+                        class="form-reservation-input"><br><br>
+                    <input type="text" id="telefono" name="telefono" value="Teléfono"
+                        class="form-reservation-input"><br><br>
+                    <label for="cumple">
+                        <input type="radio" id="cumple" name="cumple">
+                        ¿Celebras cumpleaños?
+                    </label><br><br>
+                    <input type="text" id="membresia" name="membresia" value="¿Tienes membresía? Ingrésala"
+                        class="form-reservation-input"><br><br>
+                    <input type="button" value="Agregar reservación" class="boton" onclick="alert('Se ha agregado la reservacion')">
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div>
+            <a href="../doc/avisoprivacidad.pdf">Aviso de privacidad</a> |
+            <a href="https://www.cfdi.com.mx/login/">Facturación</a> |
+            <a href="https://www.linkedin.com/">Bolsa de trabajo</a> |
+            <a href="../doc/promociones.pdf">Promociones</a>
+        </div>
+        <p>© 2025 Chiringuito Marroquí. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
