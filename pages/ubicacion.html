@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
     <link rel="stylesheet" href="../style/style.css">
     <title>Chiringuito Marroquí</title>
 </head>
@@ -13,41 +14,65 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
             <div class="container-fluid">
-              <div class="navbar-brand title">
-                <h1>Chinguirito <br> Marroquí </h1>
-              </div>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-iconc "></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav ms-auto navbar-title ">
-                  <li class="nav-item"><a href="../index.html" class="nav-link naviitem-title">Restaurante</a></li>
-                  <li><a href="reservar.html" class="nav-link naviitem-title">Reservar</a></li>
-                  <li><a href="menu.html" class="nav-link naviitem-title">Menú</a></li>
-                  <li><a href="ubicacion.html" class="nav-link naviitem-title" naviitem-title>Ubicación</a></li>
-                  <li><a href="blog.html" class="nav-link naviitem-title">BLOG</a></li>
-                </ul>
-              </div>
+                <div class="navbar-brand title">
+                    <h1>Chinguirito <br> Marroquí </h1>
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-iconc "></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav ms-auto navbar-title ">
+                        <li class="nav-item"><a href="../index.html" class="nav-link naviitem-title">Restaurante</a>
+                        </li>
+                        <li><a href="reservar.html" class="nav-link naviitem-title">Reservar</a></li>
+                        <li><a href="menu.html" class="nav-link naviitem-title">Menú</a></li>
+                        <li><a href="ubicacion.html" class="nav-link naviitem-title" naviitem-title>Ubicación</a></li>
+                        <li><a href="blog.html" class="nav-link naviitem-title">BLOG</a></li>
+                    </ul>
+                </div>
             </div>
-          </nav>
+        </nav>
     </header>
     <main>
-        <section>
-            <div class="carousel">
-                <input type="radio" name="slides" id="slide1" checked>
-                <input type="radio" name="slides" id="slide2">
-                <input type="radio" name="slides" id="slide3">
 
-                <div class="slides">
-                    <img src="../img/carrusel/ubicacion/terraza.jpg" alt="Terraza">
-                    <img src="../img/carrusel/ubicacion/restauranteInterno.jpg" alt="Por dentro">
-                    <img src="../img/carrusel/ubicacion/zonaniños.jpg" alt="Zona de niños">
+        <div id="carouselUbicacion" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="../img/carrusel/ubicacion/terraza.jpg" class="d-block w-100 " alt="Slide 1">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Terraza</h5>
+                        <p>Este es el texto de la primera diapositiva.</p>
+                    </div>
                 </div>
-
-                <label for="slide1" class="prev">&#10094;</label>
-                <label for="slide2" class="next">&#10095;</label>
+                <div class="carousel-item">
+                    <img src="../img/carrusel/ubicacion/restauranteInterno.jpg" class="d-block w-100" alt="Slide 2">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Zona interna del restaurante</h5>
+                        <p>Este es el texto de la segunda diapositiva.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="../img/carrusel/ubicacion/zonaniños.jpg" class="d-block w-100" alt="Slide 3">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Zona de niños</h5>
+                        <p>Este es el texto de la tercera diapositiva.</p>
+                    </div>
+                </div>
             </div>
-        </section>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselUbicacion"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselUbicacion"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
         <div class="div-form-location">
             <div class="div-form-locationdiv">
                 <iframe
@@ -59,27 +84,43 @@
                 <label>Dirección</label><br>
                 <b>Calle Juarez 23,Guadalajara,Jalisco México</b><br>
                 <label>E-mail<label><br>
-                <b>chiringuitomarroqui@gmail.com</b><br>
-                <label>Teléfono<label><br>
-                <b>3333333333</b><br><br>
-                <label>Contamos con:</label><br>
-                <b>Estacionamiento</b><br>
-                <b>Zona para niños</b><br>
-                <b>Terraza</b>
+                        <b>chiringuitomarroqui@gmail.com</b><br>
+                        <label>Teléfono<label><br>
+                                <b>3333333333</b><br><br>
+                                <label>Contamos con:</label><br>
+                                <b>Estacionamiento</b><br>
+                                <b>Zona para niños</b><br>
+                                <b>Terraza</b>
             </div>
         </div>
     </main>
-    <footer>
-        <div>
-            <a href="../doc/avisoprivacidad.pdf">Aviso de privacidad</a> |
-            <a href="https://www.cfdi.com.mx/login/">Facturación</a> |
-            <a href="https://www.linkedin.com/">Bolsa de trabajo</a> |
-            <a href="../doc/promociones.pdf">Promociones</a>
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="nav-links">
+                <a href="doc/avisoprivacidad.pdf">Aviso de privacidad</a> |
+                <a href="https://www.cfdi.com.mx/login/">Facturación</a> |
+                <a href="https://www.linkedin.com/">Bolsa de trabajo</a> |
+                <a href="doc/promociones.pdf">Promociones</a>
+            </div>
+            <div class="social-icons text-center">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in">linkedin</i></a>
+            </div>
+            <div class="copyright">
+                <p>© 2025 Chiringuito Marroquí. Todos los derechos reservados.</p>
+            </div>
         </div>
-        <p>© 2025 Chiringuito Marroquí. Todos los derechos reservados.</p>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+        crossorigin="anonymous"></script>
 
 </body>
+
 </html>
