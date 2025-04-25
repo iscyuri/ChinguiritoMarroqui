@@ -30,12 +30,16 @@ body {
     padding: 10px 20px;
 }
 
-.navbar-toggler {
-    border-color: white;
+.naviitem-title:hover {
+    background-color: brown;
 }
 
-.navbar-toggler-icon {
-    background-image: url("data:image/svg+xml;charset=UTF8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+.menu-item-selected {
+    background-color: brown;
+}
+
+.navbar-toggler {
+    border-color: white;
 }
 
 main {
@@ -72,6 +76,7 @@ main {
     /* Ajusta la altura del carrusel */
     margin: auto;
     /* Centra el carrusel */
+    
 }
 
 
@@ -118,8 +123,6 @@ main {
     border: 1px solid #ccc;
     box-sizing: border-box;
     color: #000000;
-    /* Negro */
-
 }
 
 .form-reservation-input {
@@ -134,12 +137,44 @@ main {
     color: blue;
 }
 
-
 .div-content {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     padding: 20px;
+}
+
+
+.menu-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.div-form-menu {
+    flex: 1;
+    min-width: 300px;
+    border: 1px solid #ccc;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.div-form-menu h4 {
+    margin-top: 0;
+    color: #333;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.div-form-menu img {
+    max-width: 100%;
+    height: auto;
+}
+
+.div-form-menu p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #000000;
 }
 
 .div-form-blog {
@@ -155,8 +190,8 @@ main {
 .div-form-blog h4 {
     margin: 0;
     color: #333;
-    }
-    
+}
+
 
 .div-form-blog p {
     color: #666;
@@ -173,59 +208,81 @@ main {
     border-radius: 5px;
 }
 
-.div-form-blog a:hover {
+.boton {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
 
+.boton:hover {
+    background-color: #45a049;
+}
 
-    .boton {
-        padding: 10px 20px;
-        background-color: #4CAF50;
-        color: white;
-        border: none;
-        cursor: pointer;
-    }
+.div-form-location {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+    padding: 20px;
+    margin-top: 250px; /* Añadimos margen superior para separar del carrusel */
+    justify-content:center;
+    align-items: center;
+  }
+  
+  .div-form-locationdireccion {
+    background-color: #ccc;
+    width: 400px;
+    height: 300px;
+  }
+  
+  .div-form-locationdiv label {
+    font-weight: bold;
+    color: #007bff;
+  }
+  
+  .div-form-locationdiv b {
+    margin-bottom: 10px;
+  }
+  
+  
+.footer {
+    background-color: #666;
+    color: #ffffff;
+    padding: 20px 0;
+}
 
-    .boton:hover {
-        background-color: #45a049;
-    }
+.footer a {
+    color: #ffffff;
+    text-decoration: none;
+}
 
+.footer a:hover {
+    text-decoration: underline;
+    color: #007bff;
+}
 
+.footer .social-icons a {
+    margin: 0 10px;
+    color: #ffffff;
+    font-size: 24px;
+}
 
-    .footer {
-        background-color: #c3c9cf;
-        color: #ffffff;
-        padding: 20px 0;
-    }
+.footer .social-icons a:hover {
+    color: #007bff;
+}
 
-    .footer a {
-        color: #ffffff;
-        text-decoration: none;
-    }
+.footer .nav-links {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
 
-    .footer a:hover {
-        text-decoration: underline;
-    }
+.footer .nav-links a {
+    margin: 0 15px;
+}
 
-    .footer .social-icons a {
-        margin: 0 10px;
-        color: #ffffff;
-        font-size: 24px;
-    }
-
-    .footer .social-icons a:hover {
-        color: #007bff;
-    }
-
-    .footer .nav-links {
-        display: flex;
-        justify-content: center;
-        margin-bottom: 20px;
-    }
-
-    .footer .nav-links a {
-        margin: 0 15px;
-    }
-
-    .footer .copyright {
-        text-align: center;
-        margin-top: 10px;
-    }
+.footer .copyright {
+    text-align: center;
+    margin-top: 10px;
+}
