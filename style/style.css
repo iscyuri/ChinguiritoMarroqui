@@ -11,8 +11,7 @@ body {
     text-align: center;
 }
 
-.customnavbar {
-    background-color: #333 !important;
+.navbar {
     display: flex;
     justify-content: space-between;
 }
@@ -20,6 +19,7 @@ body {
 .title {
     color: azure;
 }
+
 
 .naviitem-title {
     color: azure;
@@ -57,6 +57,8 @@ main {
 .containerInfoIndex {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    margin-top: 250px;
+    /* Añadimos margen superior para separar del carrusel */
     gap: 10px;
 }
 
@@ -76,7 +78,7 @@ main {
     /* Ajusta la altura del carrusel */
     margin: auto;
     /* Centra el carrusel */
-    
+
 }
 
 
@@ -225,29 +227,31 @@ main {
     grid-template-columns: repeat(2, 1fr);
     gap: 2px;
     padding: 20px;
-    margin-top: 250px; /* Añadimos margen superior para separar del carrusel */
-    justify-content:center;
+    margin-top: 250px;
+    /* Añadimos margen superior para separar del carrusel */
+    justify-content: center;
     align-items: center;
-  }
-  
-  .div-form-locationdireccion {
+}
+
+.div-form-locationdireccion {
     background-color: #ccc;
     width: 400px;
     height: 300px;
-  }
-  
-  .div-form-locationdiv label {
+}
+
+.div-form-locationdiv label {
     font-weight: bold;
     color: #007bff;
-  }
-  
-  .div-form-locationdiv b {
+}
+
+.div-form-locationdiv b {
     margin-bottom: 10px;
-  }
-  
-  
+}
+
+
 .footer {
-    background-color: #666;
+    background: #aeb8bd;
+    background: linear-gradient(90deg, rgba(174, 184, 189, 1) 0%, rgba(92, 112, 100, 1) 33%, rgba(153, 95, 8, 1) 100%, rgba(237, 221, 83, 1) 100%);
     color: #ffffff;
     padding: 20px 0;
 }
