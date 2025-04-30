@@ -1,7 +1,12 @@
 body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+    display: grid;
+    margin: 0;
+    background: black;
+}
+
+
+.body-specific {
+    display: grid;
     margin: 0;
     background-image: url('../img/Comunes/ChinguiritoMarroquiBody.jpg');
     background-size: cover;
@@ -11,282 +16,278 @@ body {
     text-align: center;
 }
 
-.navbar {
-    display: flex;
-    justify-content: space-between;
+/*Fonts*/
+.tangerine-bold {
+    font-family: "Tangerine", cursive;
+    font-weight: 900;
+    font-style: italic;
+    font-size: 60px;
+    color: aliceblue;
+    text-align: center;
 }
 
-.title {
-    color: azure;
-}
 
-
-.naviitem-title {
-    color: azure;
-    background-color: rgb(160, 142, 119);
-    border-radius: 80px;
-    transition: background-color 0.3s;
-    width: 140px;
-    padding: 10px 20px;
+.navbar-brand img {
+    margin-left: 40px;
+    width: 120px;
+    height: 70px;
+    align-items: center;
 }
 
 .naviitem-title:hover {
     background-color: brown;
 }
 
-.menu-item-selected {
-    background-color: brown;
-}
+.nav-link {
 
-.navbar-toggler {
-    border-color: white;
-}
-
-main {
-    flex: 1;
-    padding: 20px;
-    margin-top: 10%;
-    /* Ajusta el margen superior para evitar el header */
-    display: flex;
-    flex-direction: column;
-    /* Organiza los elementos verticalmente */
-    gap: 20px;
+    color: azure;
+    background-color: rgb(160, 142, 119);
+    transition: background-color 0.3s;
+    border-radius: 80px;
+    width: 120px;
 
 }
 
-.containerInfoIndex {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    margin-top: 250px;
-    /* Añadimos margen superior para separar del carrusel */
-    gap: 10px;
-}
-
-.itemInfoRestaurant {
-    background-color: black;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
+.collapse .navbar-collapse {
     align-items: center;
 }
 
-
-.carousel {
-    width: 60%;
-    /* Ajusta el ancho del carrusel */
-    height: 300px;
-    /* Ajusta la altura del carrusel */
-    margin: auto;
-    /* Centra el carrusel */
-
+.navbar-collapse .nav-link {
+    width: auto;
+    border-radius: 0px;
 }
 
+    .nav-link:hover {
+        background-color: brown;
+    }
 
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-    background-color: rgba(0, 0, 0, 0.5);
-    /* Fondo semitransparente */
-    border-radius: 50%;
-    /* Forma redonda */
-    width: 60px;
-    /* Ajusta el tamaño */
-    height: 60px;
-    /* Ajusta el tamaño */
-}
+    .menu-item-selected {
+        background-color: brown;
+    }
 
-.carousel-control-prev-icon:hover,
-.carousel-control-next-icon:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-    /* Fondo más oscuro al pasar el mouse */
-}
+    main {
+        margin: 0;
+    }
 
-.carousel-control-prev,
-.carousel-control-next {
-    width: 7%;
-    /* Ajusta el ancho del área de clic */
-}
+    .containerInfoIndex {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        color: aliceblue;
+        margin-top: 50px;
+        margin-bottom: 100 px;
+        /* Añadimos margen superior para separar del carrusel */
+        gap: 10px;
+    }
 
+    .itemInfoRestaurant {
+        background: #918899;
+        background: linear-gradient(90deg, rgba(145, 136, 153, 1) 0%, rgba(128, 116, 23, 0.55) 17%, rgba(189, 170, 94, 0.96) 40%, rgba(161, 129, 42, 1) 86%, rgba(153, 117, 8, 1) 100%);
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        background-color: rgba(0, 0, 0, 0.5);
+        /* Fondo semitransparente */
+        border-radius: 50%;
+        /* Forma redonda */
+        width: 60px;
+        /* Ajusta el tamaño */
+        height: 60px;
+        /* Ajusta el tamaño */
+    }
 
-.div-form-reservation {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-    border: 1px solid #ccc;
-    margin: 20px;
-    background-color: rgba(255, 255, 255, 0.5);
-}
+    .carousel-control-prev-icon:hover,
+    .carousel-control-next-icon:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+        /* Fondo más oscuro al pasar el mouse */
+    }
 
-
-.div-info-contacto,
-.div-info-cliente {
-    width: 45%;
-    padding: 20px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-    color: #000000;
-}
-
-.form-reservation-input {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-}
-
-.div-info-contacto a {
-    color: blue;
-}
-
-.div-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 20px;
-}
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 7%;
+        /* Ajusta el ancho del área de clic */
+    }
 
 
-.menu-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-}
 
-.div-form-menu {
-    flex: 1;
-    min-width: 300px;
-    border: 1px solid #ccc;
-    background-color: rgba(255, 255, 255, 0.5);
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.div-form-menu h4 {
-    margin-top: 0;
-    color: #333;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-
-.div-form-menu img {
-    max-width: 100%;
-    height: auto;
-}
-
-.div-form-menu p {
-    font-size: 14px;
-    line-height: 1.5;
-    color: #000000;
-}
-
-.div-form-blog {
-    background-color: #ffffff;
-    border: 1px solid #ccc;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 30%;
-    margin: 20px;
-    padding: 20px;
-    box-sizing: border-box;
-}
-
-.div-form-blog h4 {
-    margin: 0;
-    color: #333;
-}
+    .div-form-reservation {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+        border: 1px solid #ccc;
+        margin: 20px;
+        background-color: rgba(255, 255, 255, 0.5);
+    }
 
 
-.div-form-blog p {
-    color: #666;
-    line-height: 1.6;
-}
+    .div-info-contacto,
+    .div-info-cliente {
+        width: 45%;
+        padding: 20px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+        color: #000000;
+    }
 
-.div-form-blog a {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-}
+    .form-reservation-input {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
 
-.boton {
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
+    .div-info-contacto a {
+        color: blue;
+    }
 
-.boton:hover {
-    background-color: #45a049;
-}
-
-.div-form-location {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2px;
-    padding: 20px;
-    margin-top: 250px;
-    /* Añadimos margen superior para separar del carrusel */
-    justify-content: center;
-    align-items: center;
-}
-
-.div-form-locationdireccion {
-    background-color: #ccc;
-    width: 400px;
-    height: 300px;
-}
-
-.div-form-locationdiv label {
-    font-weight: bold;
-    color: #007bff;
-}
-
-.div-form-locationdiv b {
-    margin-bottom: 10px;
-}
+    .div-content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding: 20px;
+    }
 
 
-.footer {
-    background: #aeb8bd;
-    background: linear-gradient(90deg, rgba(174, 184, 189, 1) 0%, rgba(92, 112, 100, 1) 33%, rgba(153, 95, 8, 1) 100%, rgba(237, 221, 83, 1) 100%);
-    color: #ffffff;
-    padding: 20px 0;
-}
+    .menu-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
 
-.footer a {
-    color: #ffffff;
-    text-decoration: none;
-}
+    .div-form-menu {
+        flex: 1;
+        min-width: 300px;
+        border: 1px solid #ccc;
+        background-color: rgba(255, 255, 255, 0.5);
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
 
-.footer a:hover {
-    text-decoration: underline;
-    color: #007bff;
-}
+    .div-form-menu h4 {
+        margin-top: 0;
+        color: #333;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
 
-.footer .social-icons a {
-    margin: 0 10px;
-    color: #ffffff;
-    font-size: 24px;
-}
+    .div-form-menu img {
+        max-width: 100%;
+        height: auto;
+    }
 
-.footer .social-icons a:hover {
-    color: #007bff;
-}
+    .div-form-menu p {
+        font-size: 14px;
+        line-height: 1.5;
+        color: #000000;
+    }
 
-.footer .nav-links {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-}
+    .div-form-blog {
+        background-color: #ffffff;
+        border: 1px solid #ccc;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 30%;
+        margin: 20px;
+        padding: 20px;
+        box-sizing: border-box;
+    }
 
-.footer .nav-links a {
-    margin: 0 15px;
-}
+    .div-form-blog h4 {
+        margin: 0;
+        color: #333;
+    }
 
-.footer .copyright {
-    text-align: center;
-    margin-top: 10px;
-}
+
+    .div-form-blog p {
+        color: #666;
+        line-height: 1.6;
+    }
+
+    .div-form-blog a {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+
+    .boton {
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+
+    .boton:hover {
+        background-color: #45a049;
+    }
+
+    .div-form-location {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2px;
+        padding: 20px;
+        margin-top: 250px;
+        /* Añadimos margen superior para separar del carrusel */
+        justify-content: center;
+        align-items: center;
+    }
+
+    .div-form-locationdireccion {
+        background-color: #ccc;
+        width: 400px;
+        height: 300px;
+    }
+
+    .div-form-locationdiv label {
+        font-weight: bold;
+        color: #007bff;
+    }
+
+    .div-form-locationdiv b {
+        margin-bottom: 10px;
+    }
+
+
+    .footer {
+        background: #918899;
+        background: linear-gradient(90deg, rgba(145, 136, 153, 1) 0%, rgba(168, 164, 130, 0.55) 17%, rgba(138, 133, 116, 0.96) 40%, rgba(150, 145, 129, 1) 86%, rgba(176, 173, 165, 1) 100%);
+        color: #ffffff;
+        padding: 20px 0;
+    }
+
+    .footer a {
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+    .footer a:hover {
+        text-decoration: underline;
+        color: #007bff;
+    }
+
+    .img-fluid {
+        width: 60px;
+        height: 60px;
+    }
+
+    .footer .nav-links {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    .footer .nav-links a {
+        margin: 0 15px;
+    }
+
+    .footer .copyright {
+        text-align: center;
+        margin-top: 10px;
+    }

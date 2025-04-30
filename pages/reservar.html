@@ -10,61 +10,64 @@
     <title>Chiringuito Marroquí</title>
 </head>
 
-<body>
+<body class="body-specific">
+
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-          <a class="navbar-brand" href="#">Chinguirito Marroquí </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto navbar-title">
-                <li class="nav-item"><a href="../index.html" class="nav-link naviitem-title">Restaurante</a></li>
-                <li><a href="reservar.html" class="nav-link naviitem-title menu-item-selected">Reservar</a></li>
-                <li><a href="menu.html" class="nav-link naviitem-title  ">Menú</a></li>
-                <li><a href="ubicacion.html" class="nav-link naviitem-title" naviitem-title>Ubicación</a></li>
-                <li><a href="blog.html" class="nav-link naviitem-title">BLOG</a></li>
-            </ul>
-          </div>
-      </nav>
+            <a class="navbar-brand" href="index.html"><img src="../img/Header/marca/chinguirito-marroqui.jpg"
+                    class=""></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto navbar-title">
+                    <li class="nav-item"><a href="../index.html" class="nav-link naviitem-title">Restaurante</a></li>
+                    <li><a href="reservar.html" class="nav-link naviitem-title menu-item-selected">Reservar</a></li>
+                    <li><a href="menu.html" class="nav-link naviitem-title  ">Menú</a></li>
+                    <li><a href="ubicacion.html" class="nav-link naviitem-title" naviitem-title>Ubicación</a></li>
+                    <li><a href="blog.html" class="nav-link naviitem-title">BLOG</a></li>
+                </ul>
+            </div>
+        </nav>
     </header>
     <main>
-        
-            <div class="div-form-reservation">
-                <div class="div-info-contacto">
-                    <h4>Te esperamos</h4>
-                    <label>Horario</label><br>
-                    <b>De Martes a Domingo, de <br>11:00 a.m. a 23:00p.m.</b><br><br>
-                    <a href="ubicacion.html">Ubicación</a><br>
-                    <label>Para ver disponibilidad favor <br>de consultar los siguientes
-                        datos:</label><br><br>
-                    <label>E-mail</label><br>
-                    <b>chiringuitomarroqui@gmail.com</b><br><br>
-                    <label>Teléfono</label><br>
-                    <b>3333333333</b>
-                </div>
-                <div class="div-info-cliente">
-                    <h4>Favor de ingresar los siguientes <br>datos</h4>
-                    <input type="date" id="fecha" name="fecha" class="form-reservation-input"><br><br>
-                    <select id="opciones" name="opciones">
-                        <option value="-">Número de comensales</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                    </select><br><br>
-                    <input type="text" id="nombre" name="nombre" value="Escribe tu nombre"
-                        class="form-reservation-input"><br><br>
-                    <input type="text" id="telefono" name="telefono" value="Teléfono"
-                        class="form-reservation-input"><br><br>
-                    <label for="cumple">
-                        <input type="radio" id="cumple" name="cumple">
-                        ¿Celebras cumpleaños?
-                    </label><br><br>
-                    <input type="text" id="membresia" name="membresia" value="¿Tienes membresía? Ingrésala"
-                        class="form-reservation-input"><br><br>
-                    <input type="button" value="Agregar reservación" class="boton"
-                        onclick="alert('Se ha agregado la reservacion')">
-                </div>
+
+        <div class="div-form-reservation">
+            <div class="div-info-contacto">
+                <h4>Te esperamos</h4>
+                <label>Horario</label><br>
+                <b>De Martes a Domingo, de <br>11:00 a.m. a 23:00p.m.</b><br><br>
+                <a href="ubicacion.html">Ubicación</a><br>
+                <label>Para ver disponibilidad favor <br>de consultar los siguientes
+                    datos:</label><br><br>
+                <label>E-mail</label><br>
+                <b>chiringuitomarroqui@gmail.com</b><br><br>
+                <label>Teléfono</label><br>
+                <b>3333333333</b>
             </div>
+            <div class="div-info-cliente">
+                <h4>Favor de ingresar los siguientes <br>datos</h4>
+                <input type="date" id="fecha" name="fecha" class="form-reservation-input"><br><br>
+                <select id="opciones" name="opciones">
+                    <option value="-">Número de comensales</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                </select><br><br>
+                <input type="text" id="nombre" name="nombre" value="Escribe tu nombre"
+                    class="form-reservation-input"><br><br>
+                <input type="text" id="telefono" name="telefono" value="Teléfono"
+                    class="form-reservation-input"><br><br>
+                <label for="cumple">
+                    <input type="radio" id="cumple" name="cumple">
+                    ¿Celebras cumpleaños?
+                </label><br><br>
+                <input type="text" id="membresia" name="membresia" value="¿Tienes membresía? Ingrésala"
+                    class="form-reservation-input"><br><br>
+                <input type="button" value="Agregar reservación" class="boton"
+                    onclick="alert('Se ha agregado la reservacion')">
+            </div>
+        </div>
 
     </main>
     <footer class="footer">
@@ -76,10 +79,10 @@
                 <a href="./doc/promociones.pdf">Promociones</a>
             </div>
             <div class="social-icons text-center">
-                <a href="https://www.facebook.com/login.php/"><i class="fab fa-facebook-f"> Facebook</i></a>
-                <a href="https://x.com/"><i class="fab fa-twitter">Twitter</i> </a>
-                <a href="https://www.instagram.com/"><i class="fab fa-instagram"> Instagram</i></a>
-                <a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in">Linkedin</i></a>
+                <a href="https://www.facebook.com/login.php/"><img src="../img/Footer/facebook_.jpg" alt="Facebook" class="img-fluid"></a>
+                <a href="https://x.com/"><img src="../img/Footer/twitter_.jpg" alt="Twitter" class="img-fluid"></a>
+                <a href="https://www.instagram.com/"><img src="../img/Footer/instagram_.jpg" alt="Instagram" class="img-fluid"></a>
+                <a href="https://www.linkedin.com/"><img src="../img/Footer/linkedin_.jpg" alt="Linkedin" class="img-fluid"></a>
             </div>
             <div class="copyright">
                 <p>© 2025 Chiringuito Marroquí. Todos los derechos reservados.</p>
