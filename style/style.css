@@ -18,8 +18,8 @@ header {
   background-position: center center;
 }
 
-.tangerine-regular {
-  font-family: "Tangerine", cursive;
+.combo-regular {
+  font-family: "Combo", system-ui;
   font-weight: 400;
   font-style: normal;
 }
