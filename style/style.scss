@@ -1,0 +1,394 @@
+// Mixin para estilos de fondo
+@mixin background-styles($bg-color) {
+    background-color: $bg-color;
+}
+
+// Mixin para bordes redondeados
+@mixin borderRadius-styles($br-radius) {
+    border-radius: $br-radius;
+}
+
+// Mixin para gradientes
+@mixin gradient-bg($start-color, $end-color) {
+    background: $start-color;
+    background: linear-gradient(90deg, $start-color 0%, $end-color 100%);
+}
+
+// Mixin para enlaces
+@mixin link-styles($color, $hover-color) {
+    color: $color;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+        color: $hover-color;
+    }
+}
+
+// Mixin para centrar elementos
+@mixin center-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.genericBody {
+    display: grid;
+    margin: 0;
+    background: black;
+    min-height: 100vh; // Asegura que el body ocupe toda la altura de la pantalla
+    grid-template-rows: 1fr auto auto; // Define tres filas: contenido, espacio flexible y footer
+}
+
+header {
+    grid-row: 1; // Coloca el header en la primera fila del grid
+}
+
+.body-specific {
+    @extend .genericBody;
+    background-image: url('../img/Comunes/ChinguiritoMarroquiBody.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.tangerine-bold {
+    font-family: "Tangerine", cursive;
+    font-weight: 900;
+    font-style: italic;
+    font-size: 60px;
+    color: aliceblue;
+    text-align: center;
+}
+
+.navbar-brand {
+    img {
+        margin-left: 40px;
+        width: 120px;
+        height: 70px;
+        align-items: center;
+    }
+}
+
+.nav-link {
+    color: azure;
+    background-color: rgb(160, 142, 119);
+    transition: background-color 0.3s;
+    @include borderRadius-styles(80px);
+    width: 120px;
+
+    &:hover {
+        @include background-styles(brown);
+    }
+
+    &.menu-item-selected {
+        @include background-styles(brown);
+    }
+}
+
+.collapse {
+    .navbar-collapse {
+        align-items: center;
+
+        .nav-link {
+            width: auto;
+            @include borderRadius-styles(0px);
+        }
+    }
+}
+
+.carousel-caption {
+    position: absolute;
+    top: 0; // Posiciona el contenido en la parte superior
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+}
+
+main {
+    margin: 0;
+    grid-row: 2; // Coloca el contenido principal en la segunda fila del grid
+}
+
+.containerInfoIndex {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    color: aliceblue;
+    margin-top: 50px;
+    margin-bottom: 100px; // Corrige el espacio extra
+    gap: 10px;
+
+    @media (max-width: 768px) {
+        grid-template-columns: repeat(2, 1fr); // Cambia a dos columnas en pantallas más pequeñas
+    }
+
+    @media (max-width: 480px) {
+        grid-template-columns: 1fr; // Cambia a una columna en pantallas muy pequeñas
+    }
+}
+
+.itemInfoRestaurant {
+    background: linear-gradient(90deg, rgba(145, 136, 153, 1) 0%, rgba(128, 116, 23, 0.55) 17%, rgba(189, 170, 94, 0.96) 40%, rgba(161, 129, 42, 1) 86%, rgba(153, 117, 8, 1) 100%);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5); // Fondo semitransparente
+    border-radius: 50%; // Forma redonda
+    width: 60px; // Ajusta el tamaño
+    height: 60px; // Ajusta el tamaño
+
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.8); // Fondo más oscuro al pasar el mouse
+    }
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 7%; // Ajusta el ancho del área de clic
+}
+
+.div-form-reservation {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin: 20px;
+    @include background-styles(rgba(255, 255, 255, 0.5));
+
+    @media (max-width: 768px) {
+        flex-direction: column; // Cambia a disposición en columna en pantallas más pequeñas
+    }
+}
+
+.div-info-contacto,
+.div-info-cliente {
+    width: 45%;
+    padding: 20px;
+    box-sizing: border-box;
+    color: #000000;
+
+    a {
+        color: blue;
+    }
+
+    @media (max-width: 768px) {
+        width: 100%; // Cambia el ancho a 100% en pantallas más pequeñas
+    }
+}
+
+.form-reservation-input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.div-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.menu-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.div-form-menu {
+    flex: 1;
+    min-width: 300px;
+    @include background-styles(rgba(255, 255, 255, 0.5));
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    h4 {
+        margin-top: 0;
+        color: #333;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    p {
+        font-size: 14px;
+        line-height: 1.5;
+        color: #000000;
+    }
+}
+
+.div-form-blog {
+    @include background-styles(#ffffff);
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    margin: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+
+    h4 {
+        margin: 0;
+        color: #333;
+    }
+
+    p {
+        color: #666;
+        line-height: 1.6;
+    }
+
+    a {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 10px 20px;
+        @include background-styles(#4CAF50);
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+}
+
+.boton {
+    padding: 10px 20px;
+    @include background-styles(#4CAF50);
+    color: white;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+        @include background-styles(#45a049);
+    }
+}
+
+.div-form-location {
+    display: grid;
+    grid-template-columns: 1fr 1fr; // Dos columnas iguales
+    color: aliceblue;
+    margin-top: 50px;
+    margin-bottom: 100px; // Corrige el espacio extra
+    gap: 10px;
+
+    .div-form-location-item {
+        width: auto;
+        justify-content: center;
+        align-items: center;
+
+        label {
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        b {
+            margin-bottom: 10px;
+        }
+    }
+
+    .iframe-container {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%; // Relación de aspecto 16:9
+        height: 0;
+        overflow: hidden;
+
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+    }
+}
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    z-index: 1000;
+
+    .whatsapp-icon {
+        font-size: 40px; // Ajusta el tamaño del ícono
+        color: #25D366; // Color del ícono de WhatsApp
+        transition: transform 0.3s;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+}
+
+.footer {
+    margin-top: 50px;
+    @include gradient-bg(rgba(145, 136, 153, 1), rgba(176, 173, 165, 1));
+    color: #ffffff;
+    padding: 20px 0;
+    grid-row: 3; // Coloca el footer en la segunda fila del grid
+
+    a {
+        @include link-styles(#ffffff, #007bff);
+    }
+
+    .nav-links {
+        @include center-flex;
+        margin-bottom: 20px;
+
+        a {
+            margin: 0 15px;
+        }
+    }
+
+    .copyright {
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    @media (max-width: 768px) {
+        padding: 15px 0; // Ajusta el padding en pantallas más pequeñas
+
+        .nav-links {
+            flex-direction: column; // Cambia la disposición a columna en pantallas más pequeñas
+
+            a {
+                margin: 10px 0; // Ajusta el margen en pantallas más pequeñas
+            }
+        }
+    }
+
+    @media (max-width: 480px) {
+        padding: 10px 0; // Ajusta el padding en pantallas muy pequeñas
+
+        .nav-links {
+            a {
+                margin: 5px 0; // Ajusta el margen en pantallas muy pequeñas
+            }
+        }
+    }
+}
+
+.img-fluid {
+    width: 60px;
+    height: 60px;
+
+    @media (max-width: 768px) {
+        width: 50px; // Ajusta el tamaño en pantallas más pequeñas
+        height: 50px; // Ajusta el tamaño en pantallas más pequeñas
+    }
+
+    @media (max-width: 480px) {
+        width: 40px; // Ajusta el tamaño en pantallas muy pequeñas
+        height: 40px; // Ajusta el tamaño en pantallas muy pequeñas
+    }
+}
