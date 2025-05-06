@@ -47,10 +47,10 @@ header {
   background-color: brown;
 }
 
-.collapse .navbar-collapse {
+.navbar-collapse {
   align-items: center;
 }
-.collapse .navbar-collapse .nav-link {
+.navbar-collapse .nav-link {
   width: auto;
   border-radius: 0px;
 }

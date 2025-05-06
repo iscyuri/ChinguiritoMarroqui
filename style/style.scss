@@ -86,16 +86,16 @@ header {
     }
 }
 
-.collapse {
-    .navbar-collapse {
-        align-items: center;
 
-        .nav-link {
-            width: auto;
-            @include borderRadius-styles(0px);
-        }
+.navbar-collapse {
+    align-items: center;
+
+    .nav-link {
+        width: auto;
+        @include borderRadius-styles(0px);
     }
 }
+
 
 .carousel-caption {
     position: absolute;
