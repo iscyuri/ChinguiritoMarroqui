@@ -52,6 +52,12 @@ header {
     background-position: center center;
 }
 
+.combo-regular {
+    font-family: "Combo", system-ui;
+    font-weight: 400;
+    font-style: normal;
+  }
+
 .tangerine-bold {
     font-family: "Tangerine", cursive;
     font-weight: 900;
@@ -229,36 +235,49 @@ main {
     padding: 20px;
 }
 
+
 .menu-container {
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+    justify-content: space-between;
+    padding: 20px;
+    margin: 20px;
+    @include background-styles(black);
+
+    @media (max-width: 768px) {
+        flex-direction: column; // Cambia a disposición en columna en pantallas más pequeñas
+    }
 }
 
 .div-form-menu {
+    display: flex; /* Añadido */
+    flex-direction: column; /* Añadido para disposición en columna */
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
     flex: 1;
     min-width: 300px;
-    @include background-styles(rgba(255, 255, 255, 0.5));
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
-    h4 {
+    h1 {
         margin-top: 0;
-        color: #333;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    h4 {
+        color: white;
     }
 
     img {
-        max-width: 100%;
-        height: auto;
+        width: 440px;
+        height: 240px;
     }
 
     p {
         font-size: 14px;
         line-height: 1.5;
-        color: #000000;
+        color: white;
     }
 }
+
 
 .div-form-blog {
     @include background-styles(#ffffff);
