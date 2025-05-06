@@ -1,5 +1,7 @@
 @charset "UTF-8";
-.genericBody, .body-specific {
+
+.genericBody,
+.body-specific {
   display: grid;
   margin: 0;
   background: black;
@@ -54,9 +56,11 @@ header {
   border-radius: 80px;
   width: 120px;
 }
+
 .nav-link:hover {
   background-color: brown;
 }
+
 .nav-link.menu-item-selected {
   background-color: brown;
 }
@@ -93,11 +97,13 @@ main {
   color: aliceblue;
   gap: 10px;
 }
+
 @media (max-width: 768px) {
   .containerGridInfo {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
 @media (max-width: 480px) {
   .containerGridInfo {
     grid-template-columns: 1fr;
@@ -112,21 +118,29 @@ main {
   justify-content: center;
   align-items: center;
 }
+
 .itemInfoRestaurant img {
-  width: 150px; /* La imagen ocupa el ancho completo del contenedor */
-  height: 150px; /* Mantiene la proporción de la imagen */
+  width: 150px;
+  /* La imagen ocupa el ancho completo del contenedor */
+  height: 150px;
+  /* Mantiene la proporción de la imagen */
 }
+
 .itemInfoRestaurant p {
   text-align: justify;
 }
+
 @media (max-width: 768px) {
   .itemInfoRestaurant img {
-    width: 80%; /* Ajusta el ancho de la imagen para pantallas más pequeñas */
+    width: 80%;
+    /* Ajusta el ancho de la imagen para pantallas más pequeñas */
   }
 }
+
 @media (max-width: 480px) {
   .itemInfoRestaurant img {
-    width: 60%; /* Ajusta el ancho de la imagen para pantallas muy pequeñas */
+    width: 60%;
+    /* Ajusta el ancho de la imagen para pantallas muy pequeñas */
   }
 }
 
@@ -137,6 +151,7 @@ main {
   width: 60px;
   height: 60px;
 }
+
 .carousel-control-prev-icon:hover,
 .carousel-control-next-icon:hover {
   background-color: rgba(0, 0, 0, 0.8);
@@ -155,6 +170,7 @@ main {
   margin: 20px;
   background-color: rgba(255, 255, 255, 0.5);
 }
+
 @media (max-width: 768px) {
   .div-form-reservation {
     flex-direction: column;
@@ -168,11 +184,14 @@ main {
   box-sizing: border-box;
   color: #000000;
 }
+
 .div-info-contacto a,
 .div-info-cliente a {
   color: blue;
 }
+
 @media (max-width: 768px) {
+
   .div-info-contacto,
   .div-info-cliente {
     width: 100%;
@@ -201,6 +220,7 @@ main {
   margin: 20px;
   background-color: black;
 }
+
 @media (max-width: 1024px) {
   .menu-container {
     flex-direction: column;
@@ -208,6 +228,7 @@ main {
     margin: 15px;
   }
 }
+
 @media (max-width: 768px) {
   .menu-container {
     flex-direction: column;
@@ -215,6 +236,7 @@ main {
     margin: 10px;
   }
 }
+
 @media (max-width: 480px) {
   .menu-container {
     flex-direction: column;
@@ -233,43 +255,53 @@ main {
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
 .div-form-menu h1 {
   margin-top: 0;
 }
+
 .div-form-menu h4 {
   color: white;
 }
+
 .div-form-menu img {
   width: 440px;
   height: 240px;
 }
+
 .div-form-menu p {
   font-size: 14px;
   line-height: 1.5;
   color: white;
 }
+
 @media (max-width: 1024px) {
   .div-form-menu {
     padding: 15px;
   }
+
   .div-form-menu img {
     width: 400px;
     height: 220px;
   }
 }
+
 @media (max-width: 768px) {
   .div-form-menu {
     padding: 10px;
   }
+
   .div-form-menu img {
     width: 360px;
     height: 200px;
   }
 }
+
 @media (max-width: 480px) {
   .div-form-menu {
     padding: 5px;
   }
+
   .div-form-menu img {
     width: 320px;
     height: 180px;
@@ -286,13 +318,16 @@ main {
   box-sizing: border-box;
   position: relative;
 }
+
 .div-form-blog h4 {
   margin: 0;
   color: #333;
 }
+
 .div-form-blog .toggle-checkbox {
   display: none;
 }
+
 .div-form-blog .texto {
   color: #666;
   line-height: 1.6;
@@ -306,12 +341,14 @@ main {
   -webkit-box-orient: vertical;
   transition: max-height 0.5s ease;
 }
-.div-form-blog .toggle-checkbox:checked ~ .texto {
+
+.div-form-blog .toggle-checkbox:checked~.texto {
   max-height: 500px;
   /* Altura expandida */
   -webkit-line-clamp: unset;
   /* Permite que el texto se ajuste */
 }
+
 .div-form-blog .leer-mas {
   display: block;
   margin: 10px auto;
@@ -325,12 +362,15 @@ main {
   /* Asegura que el texto esté centrado */
   cursor: pointer;
 }
-.div-form-blog .toggle-checkbox:checked ~ .leer-mas::after {
+
+.div-form-blog .toggle-checkbox:checked~.leer-mas::after {
   content: "Leer menos";
 }
+
 .div-form-blog .leer-mas::after {
   content: "Leer más";
 }
+
 @media (max-width: 600px) {
   .div-form-blog .texto {
     max-height: 40px;
@@ -338,11 +378,13 @@ main {
     -webkit-line-clamp: 2;
     /* Número de líneas visibles para pantallas pequeñas */
   }
-  .div-form-blog .toggle-checkbox:checked ~ .texto {
+
+  .div-form-blog .toggle-checkbox:checked~.texto {
     max-height: 300px;
     /* Altura expandida para pantallas pequeñas */
   }
 }
+
 @media (min-width: 601px) and (max-width: 1024px) {
   .div-form-blog .texto {
     max-height: 50px;
@@ -350,11 +392,13 @@ main {
     -webkit-line-clamp: 3;
     /* Número de líneas visibles para pantallas medianas */
   }
-  .div-form-blog .toggle-checkbox:checked ~ .texto {
+
+  .div-form-blog .toggle-checkbox:checked~.texto {
     max-height: 400px;
     /* Altura expandida para pantallas medianas */
   }
 }
+
 @media (min-width: 1025px) {
   .div-form-blog .texto {
     max-height: 60px;
@@ -362,8 +406,10 @@ main {
     -webkit-line-clamp: 3;
     /* Número de líneas visibles para pantallas grandes */
   }
-  .div-form-blog .toggle-checkbox:checked ~ .texto {
-    max-height: 500px; /* Altura expandida para pantallas grandes */
+
+  .div-form-blog .toggle-checkbox:checked~.texto {
+    max-height: 500px;
+    /* Altura expandida para pantallas grandes */
     overflow-y: auto;
     /* Habilita el scroll vertical */
     padding: 10px;
@@ -379,6 +425,7 @@ main {
   cursor: pointer;
   transition: width 0.5s ease, background-color 1s ease;
 }
+
 .boton:hover {
   background-color: #36803a;
 }
@@ -391,18 +438,22 @@ main {
   margin-bottom: 100px;
   gap: 10px;
 }
+
 .div-form-location .div-form-location-item {
   width: auto;
   justify-content: center;
   align-items: center;
 }
+
 .div-form-location .div-form-location-item label {
   font-weight: bold;
   color: #007bff;
 }
+
 .div-form-location .div-form-location-item b {
   margin-bottom: 10px;
 }
+
 .div-form-location .iframe-container {
   position: relative;
   width: 100%;
@@ -410,6 +461,7 @@ main {
   height: 0;
   overflow: hidden;
 }
+
 .div-form-location .iframe-container iframe {
   position: absolute;
   top: 0;
@@ -427,11 +479,13 @@ main {
   height: 60px;
   z-index: 1000;
 }
+
 .whatsapp-float .whatsapp-icon {
   font-size: 40px;
   color: #25D366;
   transition: transform 0.3s;
 }
+
 .whatsapp-float .whatsapp-icon:hover {
   transform: scale(1.1);
 }
@@ -444,42 +498,52 @@ main {
   padding: 20px 0;
   grid-row: 3;
 }
+
 .footer a {
   color: #ffffff;
   text-decoration: none;
 }
+
 .footer a:hover {
   text-decoration: underline;
   color: #007bff;
 }
+
 .footer .nav-links {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 20px;
 }
+
 .footer .nav-links a {
   margin: 0 15px;
 }
+
 .footer .copyright {
   text-align: center;
   margin-top: 10px;
 }
+
 @media (max-width: 768px) {
   .footer {
     padding: 15px 0;
   }
+
   .footer .nav-links {
     flex-direction: column;
   }
+
   .footer .nav-links a {
     margin: 10px 0;
   }
 }
+
 @media (max-width: 480px) {
   .footer {
     padding: 10px 0;
   }
+
   .footer .nav-links a {
     margin: 5px 0;
   }
@@ -489,12 +553,14 @@ main {
   width: 60px;
   height: 60px;
 }
+
 @media (max-width: 768px) {
   .img-fluid {
     width: 50px;
     height: 50px;
   }
 }
+
 @media (max-width: 480px) {
   .img-fluid {
     width: 40px;

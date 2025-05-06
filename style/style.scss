@@ -56,7 +56,7 @@ header {
     font-family: "Combo", system-ui;
     font-weight: 400;
     font-style: normal;
-  }
+}
 
 .tangerine-bold {
     font-family: "Tangerine", cursive;
@@ -72,7 +72,7 @@ header {
     font-weight: 400;
     font-style: normal;
     color: #ffffff;
-  }
+}
 
 .navbar-brand {
     img {
@@ -133,7 +133,7 @@ main {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     color: aliceblue;
-    
+
     gap: 10px;
 
     @media (max-width: 768px) {
@@ -154,21 +154,27 @@ main {
     align-items: center;
 
     img {
-        width: 150px; /* La imagen ocupa el ancho completo del contenedor */
-        height: 150px; /* Mantiene la proporción de la imagen */
+        width: 150px;
+        /* La imagen ocupa el ancho completo del contenedor */
+        height: 150px;
+        /* Mantiene la proporción de la imagen */
     }
-    p{
+
+    p {
         text-align: justify;
     }
+
     @media (max-width: 768px) {
         img {
-            width: 80%; /* Ajusta el ancho de la imagen para pantallas más pequeñas */
+            width: 80%;
+            /* Ajusta el ancho de la imagen para pantallas más pequeñas */
         }
     }
 
     @media (max-width: 480px) {
         img {
-            width: 60%; /* Ajusta el ancho de la imagen para pantallas muy pequeñas */
+            width: 60%;
+            /* Ajusta el ancho de la imagen para pantallas muy pequeñas */
         }
     }
 }
@@ -292,6 +298,7 @@ main {
 
     @media (max-width: 1024px) {
         padding: 15px;
+
         img {
             width: 400px;
             height: 220px;
@@ -300,6 +307,7 @@ main {
 
     @media (max-width: 768px) {
         padding: 10px;
+
         img {
             width: 360px;
             height: 200px;
@@ -308,6 +316,7 @@ main {
 
     @media (max-width: 480px) {
         padding: 5px;
+
         img {
             width: 320px;
             height: 180px;
@@ -415,7 +424,8 @@ main {
         }
 
         .toggle-checkbox:checked~.texto {
-            max-height: 500px;/* Altura expandida para pantallas grandes */
+            max-height: 500px;
+            /* Altura expandida para pantallas grandes */
             overflow-y: auto;
             /* Habilita el scroll vertical */
             padding: 10px;
