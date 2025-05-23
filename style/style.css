@@ -401,7 +401,7 @@ ol.texto li {
   transition: background-color 0.3s;
 }
 .boton:hover {
-  background-color: #36803a;
+  background-color: #1b408e;
 }
 
 @media (max-width: 1024px) {
