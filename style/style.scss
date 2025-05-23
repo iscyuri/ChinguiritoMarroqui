@@ -458,46 +458,119 @@ ol.texto li {
     }
 }
 
+@media (max-width: 1024px) {
+    .iframe-container iframe {
+        max-width: 700px; /* Reduce el ancho */
+        height: 350px; /* Ajuste de altura */
+    }
+}
+
 .div-form-location {
-    display: grid;
-    grid-template-columns: 1fr 1fr; // Dos columnas iguales
-    color: aliceblue;
-    margin-top: 50px;
-    margin-bottom: 100px; // Corrige el espacio extra
-    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
 
     .div-form-location-item {
-        width: auto;
-        justify-content: center;
+        display: flex;
+        flex-direction: column;
         align-items: center;
-
-        label {
-            font-weight: bold;
-            color: #007bff;
-        }
-
-        b {
-            margin-bottom: 10px;
-        }
+        justify-content: center;
+        text-align: center;
+        padding: 20px;
     }
 
     .iframe-container {
-        position: relative;
         width: 100%;
-        padding-bottom: 56.25%; // Relación de aspecto 16:9
-        height: 0;
-        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        /* Centra el iframe */
+        align-items: center;
+        padding: 0;
 
         iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
             width: 100%;
-            height: 100%;
-            border: 0;
+            max-width: 1000px;
+            /* Ajuste para evitar que sea demasiado grande */
+            height: 400px;
+            /* Altura fija para pantallas grandes */
+            border-radius: 10px;
+            position: relative;
+            /* Evita que se superponga */
         }
     }
 }
+
+
+
+@media (max-width: 768px) {
+    .div-form-location {
+        gap: 15px;
+    }
+
+    .div-form-location-item {
+        padding: 15px;
+    }
+
+    .iframe-container {
+        max-width: 95%; /* Usa el 90% del ancho disponible */
+        height: 300px; /* Reduce un poco la altura */
+    }
+}
+
+
+@media (max-width: 480px) {
+    .div-form-location-item {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .iframe-container {
+        max-width: 100%; 
+        height: 250px; 
+        border-radius: 5px; 
+    }
+}
+
+.div-form-info-location {
+    color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    width: fit-content;
+    text-align: center;
+}
+
+
+.div-form-info-location b {
+    display: block;
+    font-size: 1.2em;
+    margin-bottom: 3px;
+}
+
+
+@media (max-width: 768px) {
+    .div-form-info-location {
+        width: 90%; 
+        padding: 12px; 
+    }
+}
+
+
+@media (max-width: 480px) {
+    .div-form-info-location {
+        width: 100%; 
+        padding: 10px; 
+        border-radius: 5px; 
+    }
+
+    .div-form-info-location b {
+        font-size: 1em; 
+    }
+}
+
 
 .whatsapp-float {
     position: fixed;
