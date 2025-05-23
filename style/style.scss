@@ -32,6 +32,12 @@
     align-items: center;
 }
 
+$primary-color: #007bff;
+$secondary-color: #0056b3;
+$text-color: #333;
+$border-color: #aaa;
+$background-color: #fff;
+
 .genericBody {
     display: grid;
     margin: 0;
@@ -155,11 +161,13 @@ main {
     background: linear-gradient(90deg, rgba(145, 136, 153, 1) 0%, rgba(128, 116, 23, 0.55) 17%, rgba(189, 170, 94, 0.96) 40%, rgba(161, 129, 42, 1) 86%, rgba(153, 117, 8, 1) 100%);
     padding: 20px;
     display: flex;
-    flex-direction: column; /* Apila los elementos en columna */
-    align-items: center; /* Centra los elementos horizontalmente */
+    flex-direction: column;
+    /* Apila los elementos en columna */
+    align-items: center;
+    /* Centra los elementos horizontalmente */
 
     img {
-        width:460px;
+        width: 460px;
         height: 250px;
         object-fit: cover;
     }
@@ -218,23 +226,62 @@ main {
     width: 45%;
     padding: 20px;
     box-sizing: border-box;
-    color: #000000;
+    color: #000;
 
-    a {
-        color: blue;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+
+    h1 {
+        font-size: 24px;
+        color: #3399ff;
+
+        border-bottom: 2px solid #007bff;
+        margin-bottom: 15px;
+        background: rgba(250, 247, 247, 0.8); // Fondo ligero para destacar el texto
+        padding: 5px 10px;
+        border-radius: 5px;
     }
 
-    @media (max-width: 768px) {
-        width: 100%; // Cambia el ancho a 100% en pantallas más pequeñas
+    .info-block {
+        padding: 10px;
+        margin-bottom: 10px;
+        border-bottom: 1px solid #ddd;
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        .label {
+            font-weight: bold;
+            font-size: 18px;
+            color: #333;
+        }
+
+        a {
+            color: #8c121e;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: all 0.3s ease-in-out;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
     }
 }
 
-// Variables
-$primary-color: #007bff;
-$secondary-color: #0056b3;
-$text-color: #333;
-$border-color: #aaa;
-$background-color: #fff;
+@media (max-width: 768px) {
+    .div-info-contacto {
+        width: 100%;
+    }
+}
+
+
+
+
 
 .form-reservation-input {
     width: 100%;
@@ -453,7 +500,7 @@ ol.texto li {
 
 
 .boton {
-   width: 100%;
+    width: 100%;
     padding: 12px;
     background-color: $primary-color;
     color: #fff;
@@ -470,8 +517,10 @@ ol.texto li {
 
 @media (max-width: 1024px) {
     .iframe-container iframe {
-        max-width: 700px; /* Reduce el ancho */
-        height: 350px; /* Ajuste de altura */
+        max-width: 700px;
+        /* Reduce el ancho */
+        height: 350px;
+        /* Ajuste de altura */
     }
 }
 
@@ -526,8 +575,10 @@ ol.texto li {
     }
 
     .iframe-container {
-        max-width: 95%; /* Usa el 90% del ancho disponible */
-        height: 300px; /* Reduce un poco la altura */
+        max-width: 95%;
+        /* Usa el 90% del ancho disponible */
+        height: 300px;
+        /* Reduce un poco la altura */
     }
 }
 
@@ -539,18 +590,42 @@ ol.texto li {
     }
 
     .iframe-container {
-        max-width: 100%; 
-        height: 250px; 
-        border-radius: 5px; 
+        max-width: 100%;
+        height: 250px;
+        border-radius: 5px;
     }
 }
 
 .div-form-info-location {
     color: #ffffff;
-    padding: 15px;
+    padding: 20px;
     border-radius: 8px;
     width: fit-content;
     text-align: center;
+    background: rgba(0, 0, 0, 0.6);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+
+    .location-item {
+        font-size: 18px;
+        margin: 8px 0;
+        display: block;
+    }
+
+    .highlight {
+        font-weight: bold;
+        font-size: 20px;
+        margin-top: 15px;
+    }
+
+    .facilities {
+        list-style: none;
+        padding: 0;
+        font-size: 18px;
+
+        li {
+            margin: 5px 0;
+        }
+    }
 }
 
 
@@ -563,21 +638,21 @@ ol.texto li {
 
 @media (max-width: 768px) {
     .div-form-info-location {
-        width: 90%; 
-        padding: 12px; 
+        width: 90%;
+        padding: 12px;
     }
 }
 
 
 @media (max-width: 480px) {
     .div-form-info-location {
-        width: 100%; 
-        padding: 10px; 
-        border-radius: 5px; 
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
     }
 
     .div-form-info-location b {
-        font-size: 1em; 
+        font-size: 1em;
     }
 }
 
