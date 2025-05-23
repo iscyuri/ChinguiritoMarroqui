@@ -154,17 +154,14 @@ main {
 .itemInfoRestaurant {
     background: linear-gradient(90deg, rgba(145, 136, 153, 1) 0%, rgba(128, 116, 23, 0.55) 17%, rgba(189, 170, 94, 0.96) 40%, rgba(161, 129, 42, 1) 86%, rgba(153, 117, 8, 1) 100%);
     padding: 20px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    justify-content: center;
-    align-items: center;
-    object-fit: cover;
+    display: flex;
+    flex-direction: column; /* Apila los elementos en columna */
+    align-items: center; /* Centra los elementos horizontalmente */
 
     img {
-        width: 150px;
-        /* La imagen ocupa el ancho completo del contenedor */
-        height: 150px;
-        /* Mantiene la proporción de la imagen */
+        width:460px;
+        height: 250px;
+        object-fit: cover;
     }
 
     p {
@@ -174,17 +171,16 @@ main {
     @media (max-width: 768px) {
         img {
             width: 80%;
-            /* Ajusta el ancho de la imagen para pantallas más pequeñas */
         }
     }
 
     @media (max-width: 480px) {
         img {
             width: 60%;
-            /* Ajusta el ancho de la imagen para pantallas muy pequeñas */
         }
     }
 }
+
 
 
 .carousel-control-prev-icon,
