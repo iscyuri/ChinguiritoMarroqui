@@ -274,8 +274,9 @@ main {
 }
 
 @media (max-width: 768px) {
-    .div-info-contacto {
-        width: 100%;
+    .div-info-contacto, 
+    .div-info-cliente {
+        width: 100%; // Ajusta correctamente el ancho en pantallas pequeñas
     }
 }
 
