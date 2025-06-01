@@ -43,6 +43,8 @@ $background-color: #fff;
     margin: 0;
     background: black;
     min-height: 100vh; // Asegura que el body ocupe toda la altura de la pantalla
+    overflow-x: hidden;
+
     grid-template-rows: 1fr auto auto; // Define tres filas: contenido, espacio flexible y footer
 }
 
@@ -167,7 +169,7 @@ main {
     /* Centra los elementos horizontalmente */
 
     img {
-        width: 460px;
+        width: 400px;
         height: 250px;
         object-fit: cover;
     }
@@ -279,10 +281,6 @@ main {
         width: 100%; // Ajusta correctamente el ancho en pantallas pequeñas
     }
 }
-
-
-
-
 
 .form-reservation-input {
     width: 100%;

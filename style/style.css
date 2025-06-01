@@ -4,6 +4,7 @@
   margin: 0;
   background: black;
   min-height: 100vh;
+  overflow-x: hidden;
   grid-template-rows: 1fr auto auto;
 }
 
@@ -119,7 +120,7 @@ main {
   /* Centra los elementos horizontalmente */
 }
 .itemInfoRestaurant img {
-  width: 460px;
+  width: 400px;
   height: 250px;
   object-fit: cover;
 }
