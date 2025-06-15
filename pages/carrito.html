@@ -6,12 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="../style/style.css">
     <title>Chiringuito Marroquí</title>
 </head>
 
-<body class="body-specific">
-        <header>
+<body class="genericBody">
+    <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
 
@@ -32,66 +33,60 @@
                         <li class="nav-item"><a href="menu.html" class="nav-link naviitem-title">Menú</a></li>
                         <li class="nav-item"><a href="ubicacion.html" class="nav-link naviitem-title">Ubicación</a></li>
                         <li class="nav-item"><a href="blog.html" class="nav-link naviitem-title">BLOG</a></li>
-                        <li class="nav-item"> <a href="carrito.html" class="nav-link naviitem-title">🛒 </a></li>
+
+                        <!-- Carrito como botón alineado, sin expandirse -->
+                        <li class="nav-item ms-2 menu-item-selected">
+                            <a href="#" class="btn btn-outline-light d-flex align-items-center gap-1"
+                                data-bs-toggle="offcanvas" data-bs-target="#carrito">
+                                🛒 <span class="badge bg-danger" id="cart-count">0</span>
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
     <main>
-        y>
-        <section class="blog-section">
-            <article>
-                <h1>Historia</h1>
-                <input type="checkbox" id="toggle1" class="toggle-checkbox" aria-label="Expandir historia" />
-                <p class="texto">
-                    La historia del restaurante marroquí en Guadalajara comienza con la visión de su fundador,
-                    El Mokhtar Al-Mansouri, un apasionado chef originario de Fez, Marruecos. Ahmed llegó a México en
-                    2005 con
-                    el sueño de compartir la auténtica cocina de su país natal. Fascinado por la vibrante cultura
-                    mexicana y el cálido
-                    recibimiento de su gente, decidió establecer su propio restaurante en 2013.
-                </p>
-                <label for="toggle1" class="leer-mas">Leer más</label>
-            </article>
+        <!-- Productos -->
+        <div class="container my-5">
+            <div class="row" id="productos">
 
-            <article>
-                <h1>Comida tradicional Marroquí</h1>
-                <input type="checkbox" id="toggle2" class="toggle-checkbox"
-                    aria-label="Expandir comidas tradicionales" />
-                <ol class="texto">
-                    <li>Tajín de Cordero con Ciruelas: Carne tierna y suculenta con especias como canela y comino,
-                        cocido lentamente en un tajín.</li>
-                    <li>Cuscús con Siete Verduras: Sémola de trigo cocida al vapor, acompañada de verduras, garbanzos y
-                        especias aromáticas.</li>
-                    <li>Pastilla de Pollo: Pastel hojaldrado relleno de pollo desmenuzado, almendras trituradas, canela
-                        y azúcar.</li>
-                    <li>Harira: Sopa espesa hecha de tomates, lentejas, garbanzos, carne de cordero o ternera, y
-                        especias.</li>
-                    <li>Mechoui de Cordero: Cordero asado a fuego lento con un adobo de comino y ajo.</li>
-                </ol>
-                <label for="toggle2" class="leer-mas">Leer más</label>
-            </article>
+                <!-- Producto Ejemplo -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <img src="../img/productos/comida/cuscus.jpg" class="card-img-top" alt="Cuscus">
+                        <div class="card-body">
+                            <h5 class="card-title">Producto 1</h5>
+                            <p class="card-text">$100 MXN</p>
+                            <button class="btn btn-primary agregar-carrito">Agregar al carrito</button>
+                        </div>
+                    </div>
+                </div>
 
-            <article>
-                <h1>Productos de origen marroquí</h1>
-                <input type="checkbox" id="toggle3" class="toggle-checkbox"
-                    aria-label="Expandir productos marroquíes" />
-                <ol class="texto">
-                    <li>Harissa: Pasta picante de chiles rojos, ajo, aceite de oliva y especias.</li>
-                    <li>Ras el Hanout: Mezcla de especias fragante con hasta 30 ingredientes.</li>
-                    <li>Aceite de Argán: Extraído de semillas, usado en cocina y cosmética.</li>
-                    <li>Smen: Mantequilla fermentada para añadir sabor distintivo a platos.</li>
-                    <li>Miel de Azahar: Endulza pasteles y postres tradicionales como el chebakia.</li>
-                    <li>Aceitunas Marinadas: Condimentadas con limón, ajo y especias.</li>
-                    <li>Zaatar: Hierbas secas como tomillo, orégano, mejorana, semillas de sésamo y zumaque.</li>
-                    <li>Confitura de Naranja Amarga: Conserva utilizada para acompañar pan y quesos.</li>
-                </ol>
-                <label for="toggle3" class="leer-mas">Leer más</label>
-            </article>
-        </section>
+                <!-- Más productos puedes copiar este bloque -->
 
+            </div>
+        </div>
+
+        <!-- Carrito (Offcanvas) -->
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="carrito">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title">Carrito de compras</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="list-group mb-3" id="items-carrito">
+                    <!-- Aquí se agregan los productos con JS -->
+                </ul>
+                <div class="d-flex justify-content-between fw-bold mb-3">
+                    <span>Total:</span>
+                    <span id="total">$0.00</span>
+                </div>
+                <button class="btn btn-success w-100">Finalizar compra</button>
+            </div>
+        </div>
     </main>
+
     <footer class="footer">
         <div class="container">
             <div class="nav-links">
@@ -152,11 +147,7 @@
             </div>
         </div>
     </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
-        crossorigin="anonymous"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
