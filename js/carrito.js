@@ -5,11 +5,9 @@ const itemsCarrito = document.getElementById('items-carrito');
 
 
 
-function agregarCarrito() {
-  alert("Agregando al carrito");
-
-  let nombre = "Producto ejemplo";
-  let precio = 5.5;
+function agregarCarrito(nombre,precio) {
+  
+  const confirmar = confirm(`¿Estás seguro de agregar "${nombre}" al carrito?`);
 
   carrito.push({ nombre, precio });
 
@@ -49,6 +47,7 @@ function actualizarCarrito() {
 
 
 function obtenerProductoPorNombre(nombreProducto) {
+  
   return carrito.findIndex(producto => producto.nombre.toLowerCase() === nombreProducto.toLowerCase());
 }
 
@@ -56,14 +55,21 @@ function obtenerProductoPorNombre(nombreProducto) {
 function eliminarProductoCarrito(nombreProducto) {
   const indice = obtenerProductoPorNombre(nombreProducto);
 
+  console.log("Se ha encontrado el " + carrito[indice].nombre + " en la posicion " + indice);
+  
+
   if (indice !== -1) {
     console.log("El producto " + carrito[indice].nombre + " se eliminara");
     carrito.splice(indice, 1);
 
+    actualizarCarrito();
+
     return true;
   } else {
+
+    console.log("El producto " + carrito[indice].nombre + " no se encontro");
     return false;
   }
 
-  actualizarCarrito();
+  
 }
