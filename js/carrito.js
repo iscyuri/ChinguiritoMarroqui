@@ -1,4 +1,8 @@
-
+/**
+ * @author: Yuri Villegas
+ * Simulacion de carrito de compras de un restaurant marroquí de productos y comida
+ * El carrito estara integrado con componentes bootstrap
+ */
 
 let carrito = [];
 const itemsCarrito = document.getElementById('items-carrito');
