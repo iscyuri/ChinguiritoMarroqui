@@ -9,14 +9,16 @@ const itemsCarrito = document.getElementById('items-carrito');
 
 
 
-function agregarCarrito(nombre,precio) {
-  
+function agregarCarrito(nombre, precio) {
+
   const confirmar = confirm(`¿Estás seguro de agregar "${nombre}" al carrito?`);
 
-  carrito.push({ nombre, precio });
+  if (confirmar) {
+    carrito.push({ nombre, precio });
 
-  muestraProductosCarrito();
-  actualizarCarrito();
+    muestraProductosCarrito();
+    actualizarCarrito();
+  }
 }
 
 
@@ -51,7 +53,7 @@ function actualizarCarrito() {
 
 
 function obtenerProductoPorNombre(nombreProducto) {
-  
+
   return carrito.findIndex(producto => producto.nombre.toLowerCase() === nombreProducto.toLowerCase());
 }
 
@@ -59,10 +61,10 @@ function obtenerProductoPorNombre(nombreProducto) {
 function eliminarProductoCarrito(nombreProducto) {
   const indice = obtenerProductoPorNombre(nombreProducto);
 
-  console.log("Se ha encontrado el " + carrito[indice].nombre + " en la posicion " + indice);
-  
 
   if (indice !== -1) {
+    console.log("Se ha encontrado el " + carrito[indice].nombre + " en la posicion " + indice);
+    
     console.log("El producto " + carrito[indice].nombre + " se eliminara");
     carrito.splice(indice, 1);
 
@@ -75,5 +77,5 @@ function eliminarProductoCarrito(nombreProducto) {
     return false;
   }
 
-  
+
 }
