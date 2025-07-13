@@ -737,3 +737,33 @@ ol.texto li {
         height: 40px; // Ajusta el tamaño en pantallas muy pequeñas
     }
 }
+
+#alertas {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1055;
+  width: 100%;
+  max-width: 350px;
+  pointer-events: none; // para que no bloqueen clics
+  text-align: center;
+
+  .alert {
+    animation: fadeSlideIn 0.5s ease forwards;
+    box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.2);
+    pointer-events: auto; // el alert sí debe poder cerrarse
+  }
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
