@@ -7,6 +7,7 @@
 let carrito = [];
 const itemsCarrito = document.getElementById('items-carrito');
 let productoPendiente = null; // temporal para guardar el producto
+cargarCarritoDesdeLocalStorage();
 
 function confirmarAgregarCarrito(nombre, precio) {
   // Guarda los datos del producto a agregar
@@ -27,8 +28,10 @@ document.getElementById('btnConfirmarAccion').addEventListener('click', () => {
     const { nombre, precio } = productoPendiente;
     carrito.push({ nombre, precio });
     mostrarAlerta(`"${nombre}" fue agregado al carrito.`, 'success');
-    muestraProductosCarrito();
-    actualizarCarrito();
+   
+   guardarCarritoEnLocalStorage();
+   actualizarCarrito();
+
     productoPendiente = null;
   }
 
@@ -40,12 +43,6 @@ document.getElementById('btnConfirmarAccion').addEventListener('click', () => {
 
 
 
-function muestraProductosCarrito() {
-  for (let index = 0; index < carrito.length; index++) {
-    console.log(carrito[index]);
-  }
-
-}
 
 function actualizarCarrito() {
   // Vaciar lista
@@ -87,7 +84,9 @@ function eliminarProductoCarrito(nombreProducto) {
 
     carrito.splice(indice, 1);
 
+    guardarCarritoEnLocalStorage();
     actualizarCarrito();
+
 
     return true;
   } else {
@@ -121,4 +120,16 @@ function mostrarAlerta(mensaje, tipo = 'info') {
     alerta.classList.add('hide');
     setTimeout(() => alertasDiv.removeChild(alerta), 300);
   }, 3000);
+}
+
+function cargarCarritoDesdeLocalStorage() {
+  const datos = localStorage.getItem('carrito');
+  if (datos) {
+    carrito = JSON.parse(datos);
+    actualizarCarrito(); // repinta el carrito
+  }
+}
+
+function guardarCarritoEnLocalStorage() {
+  localStorage.setItem('carrito', JSON.stringify(carrito));
 }
