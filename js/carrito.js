@@ -133,3 +133,10 @@ function cargarCarritoDesdeLocalStorage() {
 function guardarCarritoEnLocalStorage() {
   localStorage.setItem('carrito', JSON.stringify(carrito));
 }
+
+function finalizarCompra() {
+  carrito = [];
+  guardarCarritoEnLocalStorage();
+  actualizarCarrito();
+  mostrarAlerta('¡Gracias por tu compra!', 'success');
+}
