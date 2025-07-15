@@ -64,6 +64,9 @@ function actualizarCarrito() {
     itemsCarrito.appendChild(li);
   });
 
+  var total = carrito.reduce((totalCarrito, item) => totalCarrito + item.precio, 0);
+  document.getElementById('total').textContent = `$${total.toFixed(2)} MXN`;
+
 }
 
 
