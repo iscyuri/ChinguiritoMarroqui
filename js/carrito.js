@@ -107,6 +107,10 @@ document.getElementById('btnConfirmarAccion').addEventListener('click', () => {
 });
 
 
+function actualizarContadorCarrito() {
+  const contador = document.getElementById('cart-count');
+  contador.textContent = carrito.length;
+}
 
 
 function actualizarCarrito() {
@@ -115,29 +119,32 @@ function actualizarCarrito() {
 
   // Generar lista
   carrito.forEach((item) => {
-  const li = document.createElement('li');
-  li.classList.add('list-group-item', 'd-flex', 'justify-content-between', 'align-items-center');
+    const li = document.createElement('li');
+    li.classList.add('list-group-item', 'd-flex', 'justify-content-between', 'align-items-center');
 
-  const div = document.createElement('div');
-  div.textContent = item.nombre;
+    const div = document.createElement('div');
+    div.textContent = item.nombre;
 
-  const span = document.createElement('span');
-  span.classList.add('text-muted', 'ms-2');
-  span.textContent = `$${item.precio.toFixed(2)}`;
+    const span = document.createElement('span');
+    span.classList.add('text-muted', 'ms-2');
+    span.textContent = `$${item.precio.toFixed(2)}`;
 
-  const btn = document.createElement('button');
-  btn.classList.add('btn', 'btn-sm', 'btn-danger', 'eliminar-producto');
-  btn.textContent = '×';
-  btn.addEventListener('click', () => eliminarProductoCarrito(item.nombre));
+    const btn = document.createElement('button');
+    btn.classList.add('btn', 'btn-sm', 'btn-danger', 'eliminar-producto');
+    btn.textContent = '×';
+    btn.addEventListener('click', () => eliminarProductoCarrito(item.nombre));
 
-  div.appendChild(span);
-  li.appendChild(div);
-  li.appendChild(btn);
-  itemsCarrito.appendChild(li);
-});
+    div.appendChild(span);
+    li.appendChild(div);
+    li.appendChild(btn);
+    itemsCarrito.appendChild(li);
+  });
 
   var total = carrito.reduce((totalCarrito, item) => totalCarrito + item.precio, 0);
   document.getElementById('total').textContent = `$${total.toFixed(2)} MXN`;
+
+  actualizarContadorCarrito();
+
 
 }
 
@@ -150,8 +157,16 @@ function cargarCarritoDesdeLocalStorage() {
   }
 }
 function finalizarCompra() {
+  if (carrito.length == 0) {
+    mostrarAlerta('¡No hay productos por comprar!', 'danger');
+    return;
+  }
+
   carrito = [];
+
   guardarCarritoEnLocalStorage();
   actualizarCarrito();
+  actualizarContadorCarrito();
   mostrarAlerta('¡Gracias por tu compra!', 'success');
+
 }
