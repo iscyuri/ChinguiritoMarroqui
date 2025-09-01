@@ -1,0 +1,17 @@
+[
+  {
+    "nombre": "Cuscus",
+    "precio": 200,
+    "imagen": "../img/productos/comida/cuscus.jpg"
+  },
+  {
+    "nombre": "Mechoui de cordero",
+    "precio": 220,
+    "imagen": "../img/productos/comida/mechoui-cordero.jpg"
+  },
+  {
+    "nombre": "Pastilla de pollo",
+    "precio": 220,
+    "imagen": "../img/productos/comida/pastilla-pollo.jpg"
+  }
+]

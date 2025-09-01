@@ -15,27 +15,58 @@ class Producto {
 let carrito = [];
 const itemsCarrito = document.getElementById('items-carrito');
 let productoPendiente = null; // temporal para guardar el producto
-cargarCarritoDesdeLocalStorage();
+
+document.addEventListener('DOMContentLoaded', () => {
+  cargarCarritoDesdeLocalStorage();
+  cargarProductosDesdeJSON();
+});
+
+
+function cargarProductosDesdeJSON() {
+  fetch('../pages/resources/productos.json')
+    .then(response => {
+      if (!response.ok) throw new Error('Error al cargar productos');
+      return response.json();
+    })
+    .then(productos => {
+      const contenedor = document.getElementById('productos');
+      contenedor.innerHTML = productos.map(prod => `
+        <div class="col-md-4 mb-4">
+          <div class="card h-100">
+            <img src="${prod.imagen}" class="card-img-top" alt="${prod.nombre}">
+            <div class="card-body">
+              <h5 class="card-title">${prod.nombre}</h5>
+              <p class="card-text">$${prod.precio} MXN</p>
+              <button class="btn btn-primary" onclick="confirmarAgregarCarrito('${prod.nombre}', ${prod.precio})">
+                Agregar al carrito
+              </button>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    })
+    .catch(error => {
+      console.error(error);
+      mostrarAlerta('No se pudieron cargar los productos.', 'danger');
+    });
+}
+
+function crearAlertaHTML(mensaje, tipo = 'info') {
+  return `
+    <div class="alert alert-${tipo} alert-dismissible fade show" role="alert">
+      ${mensaje}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
+    </div>
+  `;
+}
 
 function mostrarAlerta(mensaje, tipo = 'info') {
   const alertasDiv = document.getElementById('alertas');
+  alertasDiv.insertAdjacentHTML('beforeend', crearAlertaHTML(mensaje, tipo));
 
-  // Crea un div con las clases de Bootstrap para alertas
-  const alerta = document.createElement('div');
-  alerta.className = `alert alert-${tipo} alert-dismissible fade show`;
-  alerta.role = 'alert';
-  alerta.innerHTML = `
-    ${mensaje}
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
-  `;
-
-  // Agrega la alerta al contenedor
-  alertasDiv.appendChild(alerta);
-
-  // Elimina la alerta después de unos segundos
+  const alerta = alertasDiv.lastElementChild;
   setTimeout(() => {
     alerta.classList.remove('show');
-    alerta.classList.add('hide');
     setTimeout(() => alertasDiv.removeChild(alerta), 300);
   }, 3000);
 }
@@ -75,24 +106,30 @@ function eliminarProductoCarrito(nombreProducto) {
 
 }
 function confirmarAgregarCarrito(nombre, precio) {
-  // Crea una instancia de Producto
+  // Evita duplicados
+  if (obtenerProductoPorNombre(nombre) !== -1) {
+    mostrarAlerta(`"${nombre}" ya está en el carrito.`, 'warning');
+    return;
+  }
+
   productoPendiente = new Producto(nombre, precio);
 
-  // Actualiza el texto del modal
   document.getElementById('mensajeConfirmacion').textContent =
     `¿Estás seguro de agregar "${productoPendiente.nombre}" al carrito?`;
 
-  // Muestra el modal
-  const modal = new bootstrap.Modal(document.getElementById('modalConfirmar'));
+
+  const modal = bootstrap.Modal.getOrCreateInstance(document.getElementById('modalConfirmar'));
   modal.show();
 }
 
 
 document.getElementById('btnConfirmarAccion').addEventListener('click', () => {
+  const modalElement = document.getElementById('modalConfirmar');
+  const modalInstance = bootstrap.Modal.getInstance(modalElement);
+
   if (productoPendiente) {
     const { nombre, precio } = productoPendiente;
-    const nuevoProducto = new Producto(nombre, precio);
-    carrito.push(nuevoProducto);
+    carrito.push(new Producto(nombre, precio));
 
     mostrarAlerta(`"${nombre}" fue agregado al carrito.`, 'success');
     guardarCarritoEnLocalStorage();
@@ -101,8 +138,7 @@ document.getElementById('btnConfirmarAccion').addEventListener('click', () => {
     productoPendiente = null;
   }
 
-  const modalElement = document.getElementById('modalConfirmar');
-  const modalInstance = bootstrap.Modal.getInstance(modalElement);
+  // Cierra el modal inmediatamente
   modalInstance.hide();
 });
 
@@ -112,40 +148,33 @@ function actualizarContadorCarrito() {
   contador.textContent = carrito.length;
 }
 
+function actualizarBotonCompra() {
+  const btn = document.getElementById('btnFinalizarCompra');
+  btn.disabled = carrito.length === 0;
+}
+
 
 function actualizarCarrito() {
-  // Vaciar lista
-  itemsCarrito.innerHTML = '';
+  itemsCarrito.innerHTML = carrito.map(item => `
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+      <div>
+        ${item.nombre}
+        <span class="text-muted ms-2">$${item.precio.toFixed(2)}</span>
+      </div>
+      <button class="btn btn-sm btn-danger eliminar-producto" data-nombre="${item.nombre}">×</button>
+    </li>
+  `).join('');
 
-  // Generar lista
-  carrito.forEach((item) => {
-    const li = document.createElement('li');
-    li.classList.add('list-group-item', 'd-flex', 'justify-content-between', 'align-items-center');
-
-    const div = document.createElement('div');
-    div.textContent = item.nombre;
-
-    const span = document.createElement('span');
-    span.classList.add('text-muted', 'ms-2');
-    span.textContent = `$${item.precio.toFixed(2)}`;
-
-    const btn = document.createElement('button');
-    btn.classList.add('btn', 'btn-sm', 'btn-danger', 'eliminar-producto');
-    btn.textContent = '×';
-    btn.addEventListener('click', () => eliminarProductoCarrito(item.nombre));
-
-    div.appendChild(span);
-    li.appendChild(div);
-    li.appendChild(btn);
-    itemsCarrito.appendChild(li);
+  // Delegación de eventos para eliminar
+  itemsCarrito.querySelectorAll('.eliminar-producto').forEach(btn => {
+    btn.addEventListener('click', () => eliminarProductoCarrito(btn.dataset.nombre));
   });
 
-  var total = carrito.reduce((totalCarrito, item) => totalCarrito + item.precio, 0);
+  const total = carrito.reduce((sum, item) => sum + item.precio, 0);
   document.getElementById('total').textContent = `$${total.toFixed(2)} MXN`;
 
   actualizarContadorCarrito();
-
-
+  actualizarBotonCompra();
 }
 
 function cargarCarritoDesdeLocalStorage() {
