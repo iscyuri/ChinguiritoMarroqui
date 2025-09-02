@@ -19,6 +19,12 @@ let productoPendiente = null; // temporal para guardar el producto
 document.addEventListener('DOMContentLoaded', () => {
   cargarCarritoDesdeLocalStorage();
   cargarProductosDesdeJSON();
+
+  const btnFinalizar = document.getElementById('btnFinalizarCompra');
+  if (btnFinalizar) {
+    btnFinalizar.addEventListener('click', finalizarCompra);
+  }
+
 });
 
 
@@ -114,8 +120,8 @@ function confirmarAgregarCarrito(nombre, precio) {
 
   productoPendiente = new Producto(nombre, precio);
 
-  document.getElementById('mensajeConfirmacion').textContent =
-    `¿Estás seguro de agregar "${productoPendiente.nombre}" al carrito?`;
+document.getElementById('mensajeConfirmacion').innerHTML =
+  `¿Estás seguro de agregar <strong>${productoPendiente.nombre}</strong> al carrito?`;
 
 
   const modal = bootstrap.Modal.getOrCreateInstance(document.getElementById('modalConfirmar'));
