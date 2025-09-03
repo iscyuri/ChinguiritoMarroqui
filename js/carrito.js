@@ -24,7 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const btnFinalizar = document.getElementById('btnFinalizarCompra');
   if (btnFinalizar) {
-    btnFinalizar.addEventListener('click', finalizarCompra);
+    btnFinalizar.addEventListener('click', mostrarResumenCheckout);
+
   }
 
 });
@@ -229,17 +230,58 @@ function cargarCarritoDesdeLocalStorage() {
     actualizarCarrito();
   }
 }
-function finalizarCompra() {
-  if (carrito.length == 0) {
-    mostrarAlerta('¡No hay productos por comprar!', 'danger');
+
+document.getElementById('btnConfirmarPedido').addEventListener('click', () => {
+  if (carrito.length === 0) {
+    mostrarAlerta('Tu carrito está vacío.', 'danger');
     return;
   }
 
+  // Vaciar el carrito
   carrito = [];
 
+  // Actualizar almacenamiento y vista
   guardarCarritoEnLocalStorage();
   actualizarCarrito();
   actualizarContadorCarrito();
-  mostrarAlerta('¡Gracias por tu compra!', 'success');
+  actualizarBotonCompra();
 
+
+  mostrarAlerta('¡Gracias por tu compra! Tu pedido fue confirmado y está en camino.', 'success');
+
+  const modal = bootstrap.Modal.getInstance(document.getElementById('modalResumenCompra'));
+  modal.hide();
+});
+
+function mostrarResumenCheckout() {
+  if (carrito.length === 0) {
+    mostrarAlerta('Tu carrito está vacío.', 'warning');
+    return;
+  }
+
+  const listaResumen = document.getElementById('listaResumen');
+  const totalResumen = document.getElementById('totalResumen');
+  listaResumen.innerHTML = '';
+
+  let total = 0;
+
+  carrito.forEach(producto => {
+    const subtotal = producto.precio * producto.cantidad;
+    total += subtotal;
+
+    const itemHTML = `
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        <div>
+          <strong>${producto.nombre}</strong> x${producto.cantidad}
+        </div>
+        <span class="text-muted">$${subtotal.toFixed(2)} MXN</span>
+      </li>
+    `;
+    listaResumen.insertAdjacentHTML('beforeend', itemHTML);
+  });
+
+  totalResumen.innerHTML = `$${total.toFixed(2)} MXN`;
+
+  const modal = bootstrap.Modal.getOrCreateInstance(document.getElementById('modalResumenCompra'));
+  modal.show();
 }
