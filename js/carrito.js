@@ -127,8 +127,8 @@ function confirmarAgregarCarrito(nombre, precio) {
   }
 
   productoPendiente = new Producto(nombre, precio);
-  document.getElementById('mensajeConfirmacion').textContent =
-    `¿Estás seguro de agregar "${productoPendiente.nombre}" al carrito?`;
+ document.getElementById('mensajeConfirmacion').innerHTML =
+  `¿Estás seguro de agregar <strong>${productoPendiente.nombre}</strong> al carrito?`;
 
   const modal = bootstrap.Modal.getOrCreateInstance(document.getElementById('modalConfirmar'));
   modal.show();
@@ -157,7 +157,9 @@ document.getElementById('btnConfirmarAccion').addEventListener('click', () => {
 
 function actualizarContadorCarrito() {
   const contador = document.getElementById('cart-count');
-  contador.textContent = carrito.length;
+  if (contador) {
+    contador.innerHTML = `<span class="badge bg-primary">${carrito.length}</span>`;
+  }
 }
 
 function actualizarBotonCompra() {
@@ -211,8 +213,10 @@ function actualizarCarrito() {
   });
 
   const total = carrito.reduce((sum, item) => sum + item.precio * item.cantidad, 0);
-  document.getElementById('total').textContent = `$${total.toFixed(2)} MXN`;
-
+   const totalElemento = document.getElementById('total');
+if (totalElemento) {
+  totalElemento.innerHTML = `<strong>Total:</strong> <span class="text-success">$${total.toFixed(2)} MXN</span>`;
+}
   actualizarContadorCarrito();
   actualizarBotonCompra();
 }
